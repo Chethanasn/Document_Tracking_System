@@ -1,0 +1,32 @@
+@"
+# Gradle
+.gradle/
+build/
+*/build/
+captures/
+.externalNativeBuild/
+.cxx/
+outputs/
+
+# Local config
+local.properties
+
+# IDE / System
+.idea/
+*.iml
+.DS_Store
+Thumbs.db
+.vscode/
+
+# Keystore files
+*.jks
+*.keystore
+*.pem
+
+# Logs
+*.log
+
+# APK / Bundle outputs
+*.apk
+*.aab
+"@ | Out-File -Encoding utf8 .gitignore

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="12dp"
+    app:cardUseCompatPadding="true"
+    app:cardCornerRadius="16dp"
+    app:cardBackgroundColor="@color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Document name -->
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Document Title"
+            android:textStyle="bold"
+            android:textColor="@color/gray_900"
+            android:textSize="18sp" />
+
+        <!-- From: Student -->
+        <TextView
+            android:id="@+id/tvStudent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="From: Student Name"
+            android:textColor="@color/gray_700"
+            android:textSize="14sp"
+            android:layout_marginTop="6dp"/>
+
+        <!-- Submitted: Date/time -->
+        <TextView
+            android:id="@+id/tvSubmitted"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Submitted: 18 Aug 2025, 02:15 PM"
+            android:textColor="@color/gray_600"
+            android:textSize="13sp"
+            android:layout_marginTop="2dp"/>
+
+        <!-- Status -->
+        <TextView
+            android:id="@+id/tvStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Status: Pending"
+            android:textColor="@color/gray_800"
+            android:textSize="14sp"
+            android:layout_marginTop="10dp"/>
+
+        <!-- 💬 Comment Badge -->
+        <TextView
+            android:id="@+id/tvCommentTag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="💬 Comment added"
+            android:textSize="13sp"
+            android:textColor="@color/gray_600"
+            android:layout_marginTop="4dp"
+            android:visibility="gone"/>
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray_50">
+
+    <!-- 🔹 Top Bar -->
+    <LinearLayout
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/dts_blue"
+        android:padding="16dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <!-- 🔹 Logo + Title Group -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <!-- 🧩 File Logo -->
+            <ImageView
+                android:id="@+id/imgLogo"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_dashboard"
+                android:contentDescription="App Logo"
+                android:layout_marginEnd="6dp"
+                app:tint="@android:color/white" />
+
+            <!-- 🧩 Title -->
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Student Dashboard"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <!-- Profile / Menu Button -->
+        <ImageView
+            android:id="@+id/btnProfileMenuStudent"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@mipmap/ic_launcher_round"
+            android:contentDescription="Profile Menu"
+            android:background="@drawable/ic_circle_blue_100"
+            android:scaleType="centerInside"
+            android:padding="4dp" />
+    </LinearLayout>
+
+    <!-- 🔹 Search Bar -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        app:boxBackgroundMode="outline"
+        app:boxCornerRadiusTopStart="12dp"
+        app:boxCornerRadiusTopEnd="12dp"
+        app:boxCornerRadiusBottomStart="12dp"
+        app:boxCornerRadiusBottomEnd="12dp"
+        app:boxStrokeColor="@color/dts_blue">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etSearchStudent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Search documents"
+            android:inputType="text"
+            android:drawableStart="@android:drawable/ic_menu_search"
+            android:drawablePadding="8dp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- 🔹 Filter Chips -->
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/chipGroupStudentFilter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        app:singleSelection="true"
+        app:selectionRequired="true"
+        app:chipSpacing="8dp">
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipAllStudent"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="All"
+            android:checked="true"
+            app:chipBackgroundColor="@color/chip_selector"
+            android:textColor="@color/chip_text_selector"
+            app:chipStrokeWidth="1dp"
+            app:chipStrokeColor="@color/gray_400" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipNotSubmitted"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Not Submitted"
+            app:chipBackgroundColor="@color/chip_selector"
+            android:textColor="@color/chip_text_selector"
+            app:chipStrokeWidth="1dp"
+            app:chipStrokeColor="@color/gray_400" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipPendingStudent"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pending"
+            app:chipBackgroundColor="@color/chip_selector"
+            android:textColor="@color/chip_text_selector"
+            app:chipStrokeWidth="1dp"
+            app:chipStrokeColor="@color/gray_400" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipApprovedStudent"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Approved"
+            app:chipBackgroundColor="@color/chip_selector"
+            android:textColor="@color/chip_text_selector"
+            app:chipStrokeWidth="1dp"
+            app:chipStrokeColor="@color/gray_400" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipRejectedStudent"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rejected"
+            app:chipBackgroundColor="@color/chip_selector"
+            android:textColor="@color/chip_text_selector"
+            app:chipStrokeWidth="1dp"
+            app:chipStrokeColor="@color/gray_400" />
+    </com.google.android.material.chip.ChipGroup>
+
+    <!-- 🔹 Documents Recycler -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerDocuments"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="12dp" />
+</LinearLayout>
